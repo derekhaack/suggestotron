@@ -1,4 +1,4 @@
-crequire_relative 'boot'
+require_relative 'boot'
 
 require 'rails/all'
 
@@ -9,7 +9,6 @@ Bundler.require(*Rails.groups)
 module Suggestotron
   class Application < Rails::Application
    
-  config.i18n.available.locales = [:en, :es, :de]
   
  config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{de,yml}').to_s]
 config.i18n.default_locale = :de

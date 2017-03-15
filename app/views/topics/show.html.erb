@@ -8,7 +8,8 @@
 <p>
   <strong>Description:</strong>
   <%= @topic.description %>
+
 </p>
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+<%= link_to t('Edit'), edit_topic_path(@topic) %> |
+<%= link_to t('Back'), topics_path %>

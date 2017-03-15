@@ -3,11 +3,11 @@
   <head>
     <title>Suggestotron</title>
     <%= csrf_meta_tags %>
-<div> Language :
+<div> <%= t('Language') %>
 
-<%=link_to "German", topics_path(topics_path)%>
-<%=link_to "Spanish", topics_path(topics_path)%>
-
+<%=link_to 'Deutsch', url_for( :locale => 'de' )%>
+<%=link_to "Spanish", url_for( :locale => 'es')%>
+<%=link_to "English", url_for( :locale => 'en')%>
 </div>
 
 

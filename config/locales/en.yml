@@ -21,6 +21,15 @@
 
 en:
   hello: "Hello world"
-  title: "Topics"
- 
-
+  title: "title"
+  description: "description" 
+  Topics: "Topics"
+  New Topic: "New Topic"
+  Language: "Language"
+  Back: "Back"
+  Show: "Show"
+  Edit: "Edit"
+  Destroy: "Destroy"
+  Editing Topic: "Editing Topic"
+  Are you sure?: Are you sure?
+  create topic: "Create Topic"
