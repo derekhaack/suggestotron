@@ -8,7 +8,10 @@
 <p>
   <strong>Description:</strong>
   <%= @topic.description %>
-
+<p>
+	<strong> Stars: </strong>
+	<%= @topic.votes.count %>
+</p>
 </p>
 
 <%= link_to t('Edit'), edit_topic_path(@topic) %> |
