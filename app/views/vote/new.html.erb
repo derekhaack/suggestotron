@@ -1,0 +1,18 @@
+<h1> <%=t('New Vote')%></h1> 
+<%= form_for (@vote) do |f| %> 
+
+  <div class="field"> 
+
+  <%= number_field_tag :votes, nil, min: 0, max: 5%> 
+
+  </div> 
+
+     <div class="actions"> 
+
+      <% f.submit"create vote" %> 
+
+      </div> 
+
+<% end %> 
+
+<%= link_to t('Back'), topics_path %>
