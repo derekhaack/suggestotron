@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
   # GET /topics.json
   def index
     @topics = Topic.all
-    @votes = Vote.new
+    @votes = Vote.all
 
   end
 
@@ -29,7 +29,7 @@ class TopicsController < ApplicationController
   # POST /topics.json
   def create
     @topic = Topic.new(topic_params)
-    @votes = Vote.new(vote_params)
+    
 
     respond_to do |format|
       if @topic.save

@@ -1,5 +1,5 @@
 <h1> <%=t('New Vote')%></h1> 
-<%= form_for @vote do |f| %> 
+<%= form_for @votes do |f| %> 
   <div class="field"> 
   <%= number_field_tag :votes, nil, min: 0, max: 5%> 
   </div> 
