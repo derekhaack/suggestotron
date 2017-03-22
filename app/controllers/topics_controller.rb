@@ -17,8 +17,6 @@ class TopicsController < ApplicationController
   # GET /topics/new
   def new
     @topic = Topic.new
-    
-    
   end
 
 

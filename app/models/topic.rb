@@ -4,10 +4,6 @@ class Topic < ApplicationRecord
   validates_presence_of :description, :message => "This field cant be blank"
   
   def number_of_votes
-   
-   votes.count
-
-  
+    votes.count
   end
-
 end
