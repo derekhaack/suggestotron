@@ -1,10 +1,20 @@
-<h1> <%=t('New Vote')%></h1> 
-<%= form_for @votes do |f| %> 
-  <div class="field"> 
-  <%= number_field_tag :votes, nil, min: 0, max: 5%> 
-  </div> 
-     <div class="actions"> 
-      <% f.submit"create vote" %> 
-      </div> 
-<% end %> 
-<%= link_to t('Back'), topics_path %>
+<h1> <%=t('New Vote')%></h1>
+
+<%= form_for @votes do |f| %>
+
+  <div class="field">
+  <%= f.label :votes %>
+  <%= number_field_tag :stars, nil, min: 0, max: 5%>
+  <%= f.hidden_field :topic_id, :value => params[:topic_id] %>
+  </div>
+
+
+
+ <p>
+ 	 <%= f.submit "submit"%>
+ </p>
+
+
+<%= link_to t('Back'), topics_path(params[:topic_id]) %>
+
+ <% end %>

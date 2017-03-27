@@ -14,11 +14,11 @@
       <tr>
         <td><%= topic.title %></td>
         <td>  <%= topic.description %></td>
-        <td><%= topic.votes.count %></td>
+        <td><%= topic.number_of_votes%></td>
         <td><%= link_to t('Show'), topic_path(topic) %></td>
         <td><%= link_to t('Edit'), edit_topic_path(topic) %></td>
         <td><%= link_to t('Destroy'), topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td> <%= link_to t('vote'),   votes_new_path %> </td>
+        <td> <%= link_to t('vote'),   new_topic_vote_path(topic) %> </td>
 
       </tr>
          <% end %>
@@ -27,4 +27,4 @@
 
 <br>
  <%= link_to t('New Topic'), new_topic_path %>
- 
+

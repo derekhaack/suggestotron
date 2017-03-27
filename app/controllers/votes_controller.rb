@@ -1,24 +1,30 @@
 class VotesController < ApplicationController
-  
 
- def show
+
+  def index
+
+    @votes = Vote.all
   end
 
-  def new 
-    @votes = Vote.new 
 
-end
+  def show
+    @votes = topic.votes(params[:id])
+  end
 
-    def create
-    @votes = Vote.new   
+  def new
+    @votes = Vote.new
+  end
+  def create
+     topic_id = params["topic_id"]
 
-    respond_to do |format|
+    @votes =Vote.new(stars: params["stars"],topic: Topic.find(params["vote"]["topic_id"]))
     if @votes.save
-      format.html { redirect_to @topics, notice: 'vote was successfully submitted' }
+
+     flash[:succes] = 'Your vote was succesfully submitted'
+     redirect_to topics_path
     else
-      format.html { render action: "show" }
+      render "new"
     end
   end
 end
-    end
 

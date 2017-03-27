@@ -22,7 +22,7 @@
 en:
   hello: "Hello world"
   title: "title"
-  description: "description" 
+  description: "description"
   Topics: "Topics"
   New Topic: "New Topic"
   Language: "Language"
@@ -36,3 +36,4 @@ en:
   This field cant be blank: "This field cant be blank"
   Votes: "Votes"
   Stars: "Stars"
+  New Vote: "New vote"

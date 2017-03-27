@@ -10,14 +10,19 @@
 <%=link_to "English", url_for( :locale => 'en')%>
 </div>
 
-
+<%= yield %>
 
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
+
   <body>
-    <%= yield %>
+  <% flash.each do |key, value| %>
+  <p> <%= value %> </p>
+  <% end %>
+
   </body>
 </html>
