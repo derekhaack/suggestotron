@@ -1,0 +1,41 @@
+image: gitlab.sumcumo.net:7654/sumcumo/ace:2.3.3
+variables:
+  TZ: Europe/Berlin
+  RAILS_ENV: ci
+  CI_OUTPUT_ROOT: build
+  CI_PERSISTENT_ROOT: /results/$CI_PROJECT_NAME/$CI_BUILD_REF_NAME
+  LC_ALL: C.UTF-8
+cache:
+  key: "$CI_PIPELINE_ID"
+  untracked: true
+before_script:
+  - "mkdir -p $CI_OUTPUT_ROOT"
+  - "mkdir -p $CI_PERSISTENT_ROOT"
+  - "bundle install --with ci --jobs $(nproc) --path=/bundler/suggestotron_2.3.3"
+  - "bundle update rubyzip"
+  - "bundle install --with ci --jobs $(nproc) --path=/bundler/suggestotron_2.3.3"
+  - "bundle exec rake db:create"
+  - "bundle exec rake db:migrate"
+stages:
+  - test
+  - build
+rspec:
+  script:
+    - "mkdir -p $CI_OUTPUT_ROOT/rspec"
+    - "COVERAGE=true bundle exec rspec --format html --out $CI_OUTPUT_ROOT/rspec_results.html"
+  stage: build
+  artifacts:
+    paths:
+      - $CI_OUTPUT_ROOT
+    when: always
+    expire_in: 1 week
+    name: "${CI_PROJECT_NAME}_rspec_${CI_PIPELINE_ID}"
+  except:
+       - tags
+audit:
+  script:
+    - "bundle exec bundle-audit update"
+    - "bundle exec bundle-audit check"
+  stage: test
+  except:
+       - tags

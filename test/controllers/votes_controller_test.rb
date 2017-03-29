@@ -5,12 +5,12 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     @vote = votes(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get votes_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_vote_url
     assert_response :success
   end
