@@ -1,4 +1,4 @@
-image: gitlab.sumcumo.net:7654/sumcumo/ace:2.3.3
+image: gitlab.sumcumo.net:7654/insurance/scip:2.4.0
 variables:
   TZ: Europe/Berlin
   RAILS_ENV: ci
