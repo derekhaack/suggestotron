@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'bundler-audit', require: false
 
-group :development, :test do
+group :development, :test, :ci do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'rails-controller-testing'
