@@ -11,9 +11,9 @@ cache:
 before_script:
   - "mkdir -p $CI_OUTPUT_ROOT"
   - "mkdir -p $CI_PERSISTENT_ROOT"
-  - "bundle install --with ci --jobs $(nproc) --path=/bundler/suggestotron_2.3.3"
+  - "bundle install --with ci --jobs $(nproc) --path=/bundler/suggestotron_2.4.0"
   - "bundle update rubyzip"
-  - "bundle install --with ci --jobs $(nproc) --path=/bundler/suggestotron_2.3.3"
+  - "bundle install --with ci --jobs $(nproc) --path=/bundler/suggestotron_2.4.0"
   - "bundle exec rake db:create"
   - "bundle exec rake db:migrate"
 stages:
