@@ -16,10 +16,10 @@
     </tr>
   </thead>
   <tbody>
-
+hallo
     <% @topics.each do |topic| %>
       <tr>
-        <td><%= topic.title %></td>
+        <td class="green_text"><%= topic.title %></td>
         <td>  <%= topic.description %></td>
         <td><%= topic.number_of_votes%></td>
         <td><%= link_to t('Show'), topic_path(topic) %></td>

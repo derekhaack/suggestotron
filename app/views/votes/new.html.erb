@@ -2,9 +2,9 @@
 
 <%= form_for @votes do |f| %>
 
-  <div class="field">
+  <div class="form-group">
   <%= f.label :votes %>
-  <%= number_field_tag :stars, nil, min: 0, max: 5%>
+  <%= number_field_tag :stars, nil, min: 0, max: 5 class: "form-control input-block"%>
   <%= f.hidden_field :topic_id, :value => params[:topic_id] %>
   </div>
 
