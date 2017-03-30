@@ -38,6 +38,7 @@ gem 'bundler-audit', require: false
 group :development, :test, :ci do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'simplecov', require: false
   gem 'rails-controller-testing'
   gem "rspec-rails"
 end
