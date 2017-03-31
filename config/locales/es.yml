@@ -1,7 +1,7 @@
 es:
   hello: "hola mundo"
-  title: "titulo"
-  description: "descripcion"
+  title: "Titulo"
+  description: "Descripcion"
   Topics: "Temas"
   New Topic: "Nuevo Tema"
   Language: "Idioma"

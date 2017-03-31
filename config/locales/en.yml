@@ -21,8 +21,8 @@
 
 en:
   hello: "Hello world"
-  title: "title"
-  description: "description"
+  title: "Title"
+  description: "Description"
   Topics: "Topics"
   New Topic: "New Topic"
   Language: "Language"
